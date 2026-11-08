@@ -1,0 +1,19 @@
+# Dependências e build
+node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Dados locais e segredos (NUNCA sobem pro repo)
+backend/chat.db
+backend/.secret_key
+backend/.env
+*.log
+
+# Sistema
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/

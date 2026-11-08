@@ -1,0 +1,12 @@
+# requisitos do backend — instalados automaticamente no deploy
+fastapi>=0.115
+uvicorn[standard]>=0.34
+websockets>=14
+python-jose[cryptography]>=3.3
+bcrypt>=4.1
+aiosqlite>=0.20
+pydantic>=2.7
+pydantic-settings>=2.2
+python-dotenv>=1.0
+python-multipart>=0.0.9
+aiofiles>=24

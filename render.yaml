@@ -1,0 +1,22 @@
+# Deploy automático no Render (grátis) — push no GitHub e "New Web Service"
+services:
+  - type: web
+    name: realtime-chat
+    runtime: python
+    plan: free
+    buildCommand: >
+      cd frontend && npm install && npm run build &&
+      cd ../backend && pip install -r requirements.txt
+    startCommand: cd backend && python main.py
+    autoDeploy: true
+    envVars:
+      - key: SECRET_KEY          # gerado pelo Render, não fica no código
+        generateValue: true
+      - key: DATABASE_PATH       # banco no disco persistente (não some ao reiniciar)
+        value: /var/data/chat.db
+      - key: NODE_VERSION
+        value: 22
+    disk:
+      name: chat-data
+      mountPath: /var/data
+      sizeGB: 1
